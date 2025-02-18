@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/movie_main"
+        android:icon="@drawable/arrow_left"
+        android:title="@string/movie_main"
+        app:showAsAction="ifRoom|withText"/>
+    <item
+        android:id="@+id/movie_watching"
+        android:icon="@drawable/arrow_right"
+        android:title="@string/movie_status_watching"
+        app:showAsAction="ifRoom|withText"/>
+    <item
+        android:id="@+id/movie_willWatching"
+        android:icon="@drawable/arrow_left"
+        android:title="@string/movie_status_willWatching"
+        app:showAsAction="ifRoom|withText"/>
+    <item
+        android:id="@+id/movie_viewed"
+        android:icon="@drawable/arrow_right"
+        android:title="@string/movie_status_viewed"
+        app:showAsAction="ifRoom|withText"/>
+    <item
+        android:id="@+id/movie_abandoned"
+        android:icon="@drawable/arrow_left"
+        android:title="@string/movie_status_abandoned"
+        app:showAsAction="ifRoom|withText"/>
+
+</menu>

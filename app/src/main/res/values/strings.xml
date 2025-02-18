@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MyShows</string>
+    <string name="movie_title_label">Title</string>
+    <string name="movie_description_label">Description</string>
+    <string name="movie_status_watching">Watching</string>
+    <string name="movie_status_willWatching">Will watching</string>
+    <string name="movie_status_viewed">Viewed</string>
+    <string name="movie_status_abandoned">Abandoned</string>
+    <string name="movie_main">Main</string>
+</resources>
