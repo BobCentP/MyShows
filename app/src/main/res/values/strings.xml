@@ -7,4 +7,12 @@
     <string name="movie_status_viewed">Viewed</string>
     <string name="movie_status_abandoned">Abandoned</string>
     <string name="movie_main">Main</string>
+    <string name="movie_status_notViewed">Not viewed</string>
+    <string-array name="choice_status_movie">
+        <item>@string/movie_status_notViewed</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
 </resources>

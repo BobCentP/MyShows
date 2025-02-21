@@ -19,12 +19,9 @@ class MovieRepository private constructor(context: Context) {
 
     private val movieDao = database.movieDao()
     private val executor = Executors.newSingleThreadExecutor()
-    fun getMovies(): LiveData<List<Movie>> = movieDao.getMovies()
+    fun getMovies(status:Int): LiveData<List<Movie>> = movieDao.getMovies(status)
     fun getMovie(id: UUID): LiveData<Movie?> = movieDao.getMovie(id)
-    fun getMoviesWatching(): LiveData<List<Movie>> = movieDao.getMoviesWatching()
-    fun getMoviesWillWatching(): LiveData<List<Movie>> = movieDao.getMoviesWillWatching()
-    fun getMoviesViewed(): LiveData<List<Movie>> = movieDao.getMoviesViewed()
-    fun getMoviesAbandoned(): LiveData<List<Movie>> = movieDao.getMoviesAbandoned()
+
 
     fun updateMovie(movie: Movie){
         executor.execute {

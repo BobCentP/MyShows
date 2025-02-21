@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -39,6 +40,7 @@ class MovieFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
+        //activity?.title=""
 
         movie = Movie()
         val movieId: UUID = arguments?.getSerializable(ARG_MOVIE_ID) as UUID
@@ -48,7 +50,6 @@ class MovieFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        Log.d(TAG,"tyt oshibka")
         buttonWatchingField.setOnClickListener { movie.status=1 }
         buttonWillWatchingField.setOnClickListener {movie.status=2 }
         buttonEveningField.setOnClickListener { movie.status=3 }
@@ -56,7 +57,14 @@ class MovieFragment : Fragment() {
     }
     override fun onStop() {
         super.onStop()
+        (activity as AppCompatActivity?)!!.supportActionBar?.setDisplayShowTitleEnabled(true)
         movieDetailViewModel.saveMovie(movie)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        (activity as AppCompatActivity?)!!.supportActionBar?.setDisplayShowTitleEnabled(false)
     }
 
     override fun onCreateView(
@@ -91,8 +99,8 @@ class MovieFragment : Fragment() {
 
 
     private fun updateUI(){
-        titleField.setText(movie.title)
-        descriptionField.setText(movie.description)
+        titleField.text = movie.title
+        descriptionField.text = movie.description
 
         val executor = Executors.newSingleThreadExecutor()
         val handler = Handler(Looper.getMainLooper())
